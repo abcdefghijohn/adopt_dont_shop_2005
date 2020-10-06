@@ -1,6 +1,6 @@
 class SheltersController < ApplicationController
 
   def index
-    @shelters = ['Shelter 1', 'Shelter 2', 'Shelter 3']
+    @shelters = ['Denver Furry Pals', 'Boulder Furry Pals', 'Broomfield Furry Pals']
   end
 end
