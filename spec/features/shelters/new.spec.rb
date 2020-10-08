@@ -15,12 +15,13 @@
 # Then a `POST` request is sent to '/shelters',
 # a new shelter is created,
 # and I am redirected to the Shelter Index page where I see the new Shelter listed.
+
 require "rails_helper"
 
 describe "As a visitor" do
   describe "when I visit the Shelter Index page" do
     it "I see a link 'New Shelter' that takes me to fill out a form which sends a POST request and redirects me to the Shelter Index page where I see the new Shelter"
-    
+
   end
 
 end
