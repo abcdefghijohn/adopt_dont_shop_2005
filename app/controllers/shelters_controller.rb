@@ -1,10 +1,16 @@
 class SheltersController < ApplicationController
 
   def index
-    @shelters = ['Denver Furry Pals', 'Boulder Furry Pals', 'Broomfield Furry Pals']
+    @shelters = Shelter.all
   end
 
-  def id
+  def show
     @shelter = Shelter.find_by(id: params[:id])
   end
+
+  def new
+  end
+
+  def create
+  end 
 end

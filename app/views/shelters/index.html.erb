@@ -1,5 +1,6 @@
-<h1 style ="text-align:center"> All the Shelters! </h1>
+<h1 style ="text-align:center; font-family:Verdana"> All the Shelters! </h1>
 
 <% @shelters.each do |shelter| %>
-    <h3><%= shelter %></h3>
+    <ul style= "font-family:Verdana"><%= shelter.name %></ul>
     <% end %>
+<a href='/shelters/new'> New Shelter </a>
