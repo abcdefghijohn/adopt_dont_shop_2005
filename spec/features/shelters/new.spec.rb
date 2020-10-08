@@ -18,10 +18,23 @@
 
 require "rails_helper"
 
-describe "As a visitor" do
-  describe "when I visit the Shelter Index page" do
-    it "I see a link 'New Shelter' that takes me to fill out a form which sends a POST request and redirects me to the Shelter Index page where I see the new Shelter"
+describe "As a visitor, when I click the 'New Shelter' link in the Shelter Index page" do
+  describe "I see a form to create a new shelter" do
+    it "I input all the necessary fields of the form and it creates a new shelter when I hit 'submit'" do
 
+      shelter_4 = Shelter.create(
+                                 name: "Golden Furry Pals",
+                                 address: "123 Golden",
+                                 city: "Golden",
+                                 state: "CO",
+                                 zip: 80821
+                                )
+      visit "/shelters/#{shelter_4.id}"
+      expect(page).to have_content("#{shelter_4.name}")
+      expect(page).to have_content("#{shelter_4.address}")
+      expect(page).to have_content("#{shelter_4.city}")
+      expect(page).to have_content("#{shelter_4.state}")
+      expect(page).to have_content("#{shelter_4.zip}")
+    end
   end
-
 end
