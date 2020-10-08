@@ -14,9 +14,11 @@ describe "As a visitor" do
       visit '/shelters'
 
       expect(page).to have_content("All the Shelters!")
+
       expect(page).to have_content(shelter_1.name)
       expect(page).to have_content(shelter_2.name)
       expect(page).to have_content(shelter_3.name)
+
     end
   end
 end
