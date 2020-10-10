@@ -17,3 +17,4 @@
 <p><%= @shelter.zip %></p>
 
 <%= button_to 'Delete Shelter', "/shelters/#{@shelter.id}", method: :delete %>
+<%= link_to 'Pets', "/shelters/#{@shelter.id}/pets" %>
