@@ -11,13 +11,13 @@ denver = Shelter.create(name: "Denver Furry Pals",
                state: "CO",
                zip: "80020")
 
-Shelter.create(name: "Boulder Furry Pals",
+boulder = Shelter.create(name: "Boulder Furry Pals",
                address: "123 Boulder St",
                city: "Boulder",
                state: "CO",
                zip: "80005")
 
-Shelter.create(name: "Broomfield Furry Pals",
+broomfield = Shelter.create(name: "Broomfield Furry Pals",
                address: "123 Broomfield St",
                city: "Broomfield",
                state: "CO",
@@ -28,3 +28,15 @@ denver.pets.create(image: "https://images.dog.ceo/breeds/frise-bichon/stevebaxte
            age: "4",
            sex: "M",
            shelter_name: denver.name)
+
+boulder.pets.create(image: "https://images.dog.ceo/breeds/poodle-toy/n02113624_5278.jpg",
+           name: "Bob",
+           age: "1",
+           sex: "M",
+           shelter_name: boulder.name)
+
+broomfield.pets.create(image: "https://images.dog.ceo/breeds/appenzeller/n02107908_4903.jpg",
+           name: "Fran",
+           age: "1",
+           sex: "F",
+           shelter_name: broomfield.name)
