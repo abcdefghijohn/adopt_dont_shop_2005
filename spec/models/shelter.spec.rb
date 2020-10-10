@@ -9,5 +9,9 @@ describe Shelter, type: :model do
       should validate_presence_of :state
       should validate_presence_of :zip
     end
+
+    describe 'relationships' do
+      it {should have_many :pets}
+    end
   end
 end
