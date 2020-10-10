@@ -15,3 +15,5 @@
 
 <h3 style= "text-weight: bold"> Zip: </h3>
 <p><%= @shelter.zip %></p>
+
+<%= button_to 'Delete Shelter', "/shelters/#{@shelter.id}", method: :delete %>
