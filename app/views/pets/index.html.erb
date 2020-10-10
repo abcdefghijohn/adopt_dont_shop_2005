@@ -1,9 +1,21 @@
 <h1 style ="text-align:center; font-family:Verdana"> All the Pets! </h1>
 
 <% @pets.each do |pet| %>
-  <p><%= image_tag pet.image, size: "50x50" %></p>
+
+  -----------------------------------------------
+  <h3 style="text-weight: bold"><%= pet.name %></h3>
+
+  <p><%= image_tag pet.image, size: "200x200" %></p>
+
+  <h3 style= "text-weight: bold"> Name: </h3>
   <p><%= pet.name %></p>
+
+  <h3 style= "text-weight: bold"> Age: </h3>
   <p><%= pet.age %></p>
+
+  <h3 style= "text-weight: bold"> Sex: </h3>
   <p><%= pet.sex %></p>
+
+  <h3 style= "text-weight: bold"> Shelter Name: </h3>
   <p><%= pet.shelter_name %></p>
 <% end %>
