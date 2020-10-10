@@ -1,0 +1,9 @@
+<h1 style ="text-align:center; font-family:Verdana"> All the Pets! </h1>
+
+<% @pets.each do |pet| %>
+  <p><%= image_tag pet.image, size: "50x50" %></p>
+  <p><%= pet.name %></p>
+  <p><%= pet.age %></p>
+  <p><%= pet.sex %></p>
+  <p><%= pet.shelter_name %></p>
+<% end %>
