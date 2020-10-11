@@ -3,7 +3,7 @@
 <% @pets.each do |pet| %>
 
 ==============================================
-  <h3 style="text-weight: bold"><%= pet.name %></h3>
+  <h3> <%= link_to "#{pet.name}", "/pets/#{pet.id}", method: :get %></h3>
 
   <p><%= image_tag pet.image, size: "200x200" %></p>
 
