@@ -34,12 +34,12 @@ describe "As a visitor when I visit a Pet Show page" do
       visit "/pets/#{pet_1.id}"
       click_link 'Update Pet'
 
-      expect(page).to have_current_path('/pets/:id/edit')
+      expect(page).to have_current_path("/pets/#{pet_1.id}/edit")
 
       fill_in 'pet[name]', with: 'Bill'
       click_on "Submit"
 
-      expect(page).to have_current_path('/pets/#{pet_1.id}')
+      expect(page).to have_current_path("/pets/#{pet_1.id}")
       expect(page).to have_content(pet_1.name)
     end
   end
