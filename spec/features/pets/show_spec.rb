@@ -7,11 +7,24 @@
 # - name
 # - approximate age
 # - sex
+
+# User Story 9, Pet Show
+#
+# As a visitor
+# When I visit '/pets/:id'
+# Then I see the pet with that id including the pet's:
+# - image
+# - name
+# - description
+# - approximate age
+# - sex
+# - adoptable/pending adoption status
+
 require 'rails_helper'
 
 describe "As a visitor" do
-  describe "when I visit '/shelters/:shelter_id/pets'" do
-    it " I see each adobtable pet" do
+  describe "through the show page" do
+    it " I see each adobtable pet including description and adoption status" do
       shelter_1 = Shelter.create(name: "Denver Furry Pals",
                                  address: "123 Denver St",
                                  city: "Denver",
@@ -20,8 +33,10 @@ describe "As a visitor" do
                                 )
       pet_1 = shelter_1.pets.create(image: "https://images.dog.ceo/breeds/poodle-toy/n02113624_1832.jpg",
                                  name: "Jim",
+                                 description: "Friendly",
                                  age: 4,
                                  sex: "M",
+                                 adoption_status: 'Adoptable',
                                  shelter_name: "Denver Furry Pals"
                                 )
       visit "/shelters/#{shelter_1.id}/pets"
