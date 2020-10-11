@@ -25,18 +25,24 @@ broomfield = Shelter.create(name: "Broomfield Furry Pals",
 
 denver.pets.create(image: "https://images.dog.ceo/breeds/frise-bichon/stevebaxter_bichon_frise.jpg",
            name: "Jim",
+           description: "Friendly",
            age: "4",
            sex: "M",
-           shelter_name: denver.name)
+           shelter_name: denver.name,
+           adoption_status: 'Adoptable')
 
 boulder.pets.create(image: "https://images.dog.ceo/breeds/poodle-toy/n02113624_5278.jpg",
            name: "Bob",
+           description: "Playful",
            age: "1",
            sex: "M",
-           shelter_name: boulder.name)
+           shelter_name: boulder.name,
+           adoption_status: 'Adoptable')
 
 broomfield.pets.create(image: "https://images.dog.ceo/breeds/appenzeller/n02107908_4903.jpg",
            name: "Fran",
+           description: "Calm",
            age: "1",
            sex: "F",
-           shelter_name: broomfield.name)
+           shelter_name: broomfield.name,
+           adoption_status: 'Adoption Pending')
