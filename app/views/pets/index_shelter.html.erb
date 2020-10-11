@@ -1,0 +1,14 @@
+<h1 style="font-family:Verdana; text-weight:bold"> Shelter's Pets</h1>
+
+<% @pets.each do |pet|  %>
+============================================
+  <h3> <%= link_to "#{pet.name}", "/pets/#{pet.id}", method: :get %></h3>
+
+  <p><%= image_tag pet.image, size: "200x200" %></p>
+
+  <h3 style= "text-weight: bold"> Age: </h3>
+  <p><%= pet.age %></p>
+
+<% end %>
+
+<%= link_to 'Create Pet', "/shelters/#{@shelter.id}/pets/new" %>
