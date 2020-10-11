@@ -1,6 +1,7 @@
 <form action="/pets/<%= @pet.id %>" method = "post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <input type="hidden" name="_method" value="PATCH" />
+  <input type="hidden" name="pet[shelter_id]" value="<%= @pet.shelter_id %>" />
   <p style="font-family:Verdana"> Update Pet </p>
 
   <h3 style= "text-weight: bold"> Image: </h3>
@@ -17,5 +18,8 @@
 
   <h3 style= "text-weight: bold"> Sex: </h3>
   <input type='text' name='pet[sex]' value="<%= @pet.sex %>" /><br/>
+
+  <h3 style= "text-weight: bold"> Adoption Status: </h3>
+  <input type='text' name='pet[adoption_status]' value="<%= @pet.adoption_status %>" /><br/>
   <input type='submit' value="Submit">
 </form>

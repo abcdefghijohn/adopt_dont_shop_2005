@@ -18,7 +18,15 @@ class PetsController < ApplicationController
   end
 
   def create
-    pet = Pet.new(pet_params)
+    pet = Pet.new({
+      image: params[:pet][:image],
+      name: params[:pet][:name],
+      description: params[:pet][:description],
+      age: params[:pet][:age],
+      sex: params[:pet][:sex],
+      adoption_status: 'Adoptable',
+      shelter_id: params[:pet][:shelter_id]
+      })
     pet.save!
     redirect_to "/shelters/#{pet.shelter_id}/pets"
   end
@@ -29,9 +37,17 @@ class PetsController < ApplicationController
 
   def update
     pet = Pet.find(params[:id])
-    pet.update(pet_params)
+    pet.update!({
+      image: params[:pet][:image],
+      name: params[:pet][:name],
+      description: params[:pet][:description],
+      age: params[:pet][:age],
+      sex: params[:pet][:sex],
+      adoption_status: params[:pet][:adoption_status],
+      shelter_id: params[:pet][:shelter_id]
+      })
 
-    pet.save
+
     redirect_to "/pets/#{pet.id}"
   end
 
@@ -43,7 +59,7 @@ class PetsController < ApplicationController
       description: params[:pet][:description],
       age: params[:pet][:age],
       sex: params[:pet][:sex],
-      adoption_status: true,
+      :adoption_status => ('Adoptable' unless params[:pet][:adoption_status]),
       shelter_id: params[:pet][:shelter_id]
       }
   end
