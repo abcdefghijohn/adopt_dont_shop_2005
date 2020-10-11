@@ -1,6 +1,5 @@
 <a href="/shelters"> Shelter Pets Index </a>
 <br>
-<a href='/shelters/<%= @shelter.id %>/edit'> Update Shelter </a>
 <h3 style= "text-weight: bold"> Name: </h3>
 <p><%= @shelter.name %></p>
 
@@ -16,5 +15,10 @@
 <h3 style= "text-weight: bold"> Zip: </h3>
 <p><%= @shelter.zip %></p>
 
-<%= button_to 'Delete Shelter', "/shelters/#{@shelter.id}", method: :delete %>
 <%= link_to 'Pets', "/shelters/#{@shelter.id}/pets" %>
+<br>
+<br>
+<a href='/shelters/<%= @shelter.id %>/edit'> Update Shelter </a>
+<br>
+<br>
+<%= button_to 'Delete Shelter', "/shelters/#{@shelter.id}", method: :delete %>
