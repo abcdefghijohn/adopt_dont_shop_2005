@@ -31,18 +31,16 @@ describe "As a visitor when I visit the Shelter Pets Index page" do
 
       expect(current_path).to eq("/shelters/#{shelter_1.id}/pets/new")
 
-      fill_in 'Name', with: 'Sam'
-      fill_in 'Description', with: 'Friendly'
-      fill_in 'Age', with: '3'
-      fill_in 'Sex', with: 'F'
-      click_on "Submit"
+      fill_in 'pet[image]', with: 'https://images.dog.ceo/breeds/spaniel-welsh/n02102177_661.jpg'
+      fill_in 'pet[name]', with: 'Sam'
+      fill_in 'pet[description]', with: 'Friendly'
+      fill_in 'pet[age]', with: '3'
+      fill_in 'pet[sex]', with: 'F'
+      save_and_open_page
+      click_on "Create Pet"
 
       expect(page).to have_content('Sam')
-      expect(page).to have_content('Friendly')
       expect(page).to have_content(3)
-      expect(page).to have_content('F')
-      expect(page).to have_content('Adoptable')
-
     end
   end
 end

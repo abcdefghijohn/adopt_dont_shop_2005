@@ -40,7 +40,7 @@ describe "As a visitor when I visit a Pet Show page" do
       click_on "Submit"
 
       expect(page).to have_current_path("/pets/#{pet_1.id}")
-      expect(page).to have_content(pet_1.name)
+      expect(page).to have_content('Bill')
     end
   end
 end
